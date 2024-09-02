@@ -10,6 +10,7 @@ import { TodosComponent } from './pages/todos/todos.component';
 import { permissionsGuard } from './guards/permissions.guard';
 import { warningsGuard } from './guards/warnings.guard';
 import { canActivate, redirectUnauthorizedTo} from '@angular/fire/auth-guard';
+import { NgzorroComponent } from './pages/ngzorro/ngzorro.component';
 
 export const routes: Routes = [
     { path: 'home', component: HomeComponent },
@@ -19,6 +20,7 @@ export const routes: Routes = [
     { path: 'acercade', component: AcercadeComponent },
     { path: 'login', component: LoginComponent },
     { path: 'todos', component: TodosComponent, canActivate: [permissionsGuard]},
+    { path: 'ngzorro', component: NgzorroComponent},
     { path: '', redirectTo: 'home', pathMatch: 'full' },
     { path: '**', component: Error404Component },
 ];
