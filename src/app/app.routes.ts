@@ -9,11 +9,11 @@ import { PokemonComponent } from './pages/pokemon/pokemon.component';
 import { TodosComponent } from './pages/todos/todos.component';
 import { permissionsGuard } from './guards/permissions.guard';
 import { warningsGuard } from './guards/warnings.guard';
-import { canActivate} from '@angular/fire/auth-guard';
+import { canActivate, redirectUnauthorizedTo} from '@angular/fire/auth-guard';
 
 export const routes: Routes = [
     { path: 'home', component: HomeComponent },
-    { path: 'pokemons', component: PokemonsComponent, ...canActivate },
+    { path: 'pokemons', component: PokemonsComponent, ...canActivate(() => redirectUnauthorizedTo(['/login'])) },
     { path: 'pokemon/:id', component: PokemonComponent },
     { path: 'posts', component: ListPostsComponent, canDeactivate: [warningsGuard] },
     { path: 'acercade', component: AcercadeComponent },
