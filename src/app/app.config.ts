@@ -12,6 +12,11 @@ export const appConfig: ApplicationConfig = {
   providers: [
     provideZoneChangeDetection({ eventCoalescing: true }), 
     provideRouter(routes),
-    provideHttpClient(), provideFirebaseApp(() => initializeApp({"projectId":"app-pokemon-75b64","appId":"1:449740175647:web:3218d7ae665fe13095582a","storageBucket":"app-pokemon-75b64.appspot.com","apiKey":"AIzaSyBoWZGcvEl5cmrXFu_ZTU_6jjENE3GPHak","authDomain":"app-pokemon-75b64.firebaseapp.com","messagingSenderId":"449740175647","measurementId":"G-1YDL6JY42B"})), provideAuth(() => getAuth()), provideAnalytics(() => getAnalytics()), ScreenTrackingService, UserTrackingService, provideFirestore(() => getFirestore()), provideStorage(() => getStorage()),
+    provideHttpClient(), provideFirebaseApp(() => initializeApp({"apiKey": "AIzaSyDz3FAFnz0lLJNpYaQ_7vyZN98M7gYIQ-4",
+        "authDomain": "angular-firebase-b037e.firebaseapp.com",
+        "projectId": "angular-firebase-b037e",
+        "storageBucket": "angular-firebase-b037e.appspot.com",
+        "messagingSenderId": "95063776982",
+        "appId": "1:95063776982:web:620f41fec9112bfb363377"})), provideAuth(() => getAuth()), provideAnalytics(() => getAnalytics()), ScreenTrackingService, UserTrackingService, provideFirestore(() => getFirestore()), provideStorage(() => getStorage()),
   ]
 };
